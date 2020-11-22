@@ -27,8 +27,6 @@ var $MB = (function () {
 
     function _initTable(id, settings) {
         var params = $.extend({}, bootstrapTable_default, settings);
-        console.log(settings)
-        console.log(params)
         if (typeof params.url === 'undefined') {
             throw '初始化表格失败，请配置url参数！';
         }

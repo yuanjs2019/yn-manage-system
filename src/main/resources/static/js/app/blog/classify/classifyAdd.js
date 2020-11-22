@@ -1,16 +1,16 @@
 var validator;
-var $tagAddForm = $("#tag-add-form");
+var $classifyAddForm = $("#classify-add-form");
 
 $(function () {
     validateRule();
 
-    $("#tag-add .btn-save").click(function () {
+    $("#classify-add .btn-save").click(function () {
         var name = $(this).attr("name");
-        validator = $tagAddForm.validate();
+        validator = $classifyAddForm.validate();
         var flag = validator.form();
         if (flag) {
             if (name === "save") {
-                $.post(ctx + "tag/add", $tagAddForm.serialize(), function (r) {
+                $.post(ctx + "classify/add", $classifyAddForm.serialize(), function (r) {
                     if (r.code === 0) {
                         closeModal();
                         refresh();
@@ -19,7 +19,7 @@ $(function () {
                 });
             }
             if (name === "update") {
-                $.post(ctx + "tag/update", $tagAddForm.serialize(), function (r) {
+                $.post(ctx + "classify/update", $classifyAddForm.serialize(), function (r) {
                     if (r.code === 0) {
                         closeModal();
                         refresh();
@@ -30,39 +30,39 @@ $(function () {
         }
     });
 
-    $("#tag-add .btn-close").click(function () {
+    $("#classify-add .btn-close").click(function () {
         closeModal();
     });
 
 });
 
 function closeModal() {
-    $("#tag-add-button").attr("name", "save");
-    $("#tag-add-modal-title").html('新增标签');
+    $("#classify-add-button").attr("name", "save");
+    $("#classify-add-modal-title").html('新增分类');
     validator.resetForm();
-    $MB.closeAndRestModal("tag-add");
+    $MB.closeAndRestModal("classify-add");
 }
 
 function validateRule() {
     var icon = "<i class='zmdi zmdi-close-circle zmdi-hc-fw'></i> ";
-    validator = $tagAddForm.validate({
+    validator = $classifyAddForm.validate({
         rules: {
-            tagName: {
+            classifyName: {
                 required: true,
                 maxlength: 100
             },
-            tagCode: {
+            classifyCode: {
                 required: true,
                 maxlength: 100
             },
         },
         messages: {
-            tagName: {
-                required: icon + "请输入标签名称",
+            classifyName: {
+                required: icon + "请输入分类名称",
                 maxlength: icon + "长度不能超过100个字符"
             },
-            tagCode: {
-                required: icon + "请输入标签编码",
+            classifyCode: {
+                required: icon + "请输入分类编码",
                 maxlength: icon + "长度不能超过100个字符"
             }
         }

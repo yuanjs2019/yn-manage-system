@@ -1,4 +1,4 @@
-<div data-th-include="blog/tag/tagAdd"></div>
+<div data-th-include="blog/series/seriesAdd"></div>
 <div class="card">
     <div class="card-block">
         <div class="table-responsive">
@@ -10,33 +10,33 @@
                         <i data-toggle="dropdown" class="zmdi zmdi-download">
 		            </i>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="excel" onclick="exportTagExcel()">
+                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="excel" onclick="exportSeriesExcel()">
 		                    Excel (.xlsx)
 		                </a>
-                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="csv" onclick="exportTagCsv()">
+                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="csv" onclick="exportSeriesCsv()">
 		                    CSV (.csv)
 		                </a>
                         </ul>
                     </div>
-                    <div class="dropdown actions__item" shiro:hasAnyPermissions="tag:add,tag:update,tag:delete">
+                    <div class="dropdown actions__item" shiro:hasAnyPermissions="series:add,series:update,series:delete">
                         <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#tag-add" shiro:hasPermission="tag:add">新增标签典</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateTag()" shiro:hasPermission="tag:update">修改标签</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteTags()" shiro:hasPermission="tag:delete">删除标签</a>
+                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#series-add" shiro:hasPermission="series:add">新增系列</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateSeries()" shiro:hasPermission="series:update">修改系列</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteSeriess()" shiro:hasPermission="series:delete">删除系列</a>
                         </div>
                     </div>
                 </div>
                 <div id="data-table_filter" class="dataTables_filter">
-                    <form class="tag-table-form">
+                    <form class="series-table-form">
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="input-group">
                                     <span class="input-group-addon">
-					               标签名称：
+					               系列名称：
 					            </span>
                                     <div class="form-group">
-                                        <input type="text" name="tagNamee" class="form-control">
+                                        <input type="text" name="sericsNamee" class="form-control">
                                         <i class="form-group__bar"></i>
                                     </div>
                                 </div>
@@ -44,10 +44,10 @@
                             <div class="col-sm-3">
                                 <div class="input-group">
                                     <span class="input-group-addon">
-					               标签编码：
+					               系列编码：
 					            </span>
                                     <div class="form-group">
-                                        <input type="text" name="tagCodee" class="form-control">
+                                        <input type="text" name="sericsCodee" class="form-control">
                                         <i class="form-group__bar"></i>
                                     </div>
                                 </div>
@@ -56,11 +56,11 @@
                     </form>
                 </div>
                 <div class="table-responsive">
-                    <table id="tagTable" data-mobile-responsive="true" class="mb-bootstrap-table text-nowrap"></table>
+                    <table id="seriesTable" data-mobile-responsive="true" class="mb-bootstrap-table text-nowrap"></table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script data-th-src="@{js/app/blog/tag/tag.js}"></script>
-<script data-th-src="@{js/app/blog/tag/tagEdit.js}"></script>
+<script data-th-src="@{js/app/blog/series/series.js}"></script>
+<script data-th-src="@{js/app/blog/series/seriesEdit.js}"></script>

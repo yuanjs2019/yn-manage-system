@@ -1,4 +1,3 @@
-<div data-th-include="blog/tag/tagAdd"></div>
 <div class="card">
     <div class="card-block">
         <div class="table-responsive">
@@ -6,37 +5,35 @@
                 <div class="dataTables_buttons hidden-sm-down actions">
                     <span class="actions__item zmdi zmdi-search" onclick="search()" title="搜索" />
                     <span class="actions__item zmdi zmdi-refresh-alt" onclick="refresh()" title="刷新" />
-                    <div class="dropdown actions__item">
+                      <div class="dropdown actions__item">
                         <i data-toggle="dropdown" class="zmdi zmdi-download">
 		            </i>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="excel" onclick="exportTagExcel()">
+                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="excel" onclick="exportLogExcel()">
 		                    Excel (.xlsx)
 		                </a>
-                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="csv" onclick="exportTagCsv()">
+                            <a href="javascript:void(0)" class="dropdown-item" data-table-action="csv" onclick="exportLogCsv()">
 		                    CSV (.csv)
 		                </a>
                         </ul>
-                    </div>
-                    <div class="dropdown actions__item" shiro:hasAnyPermissions="tag:add,tag:update,tag:delete">
+                    </div> 
+                    <div class="dropdown actions__item" shiro:hasPermission="log:delete">
                         <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#tag-add" shiro:hasPermission="tag:add">新增标签典</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateTag()" shiro:hasPermission="tag:update">修改标签</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteTags()" shiro:hasPermission="tag:delete">删除标签</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteLogs()" shiro:hasPermission="log:delete">删除日志</a>
                         </div>
                     </div>
                 </div>
                 <div id="data-table_filter" class="dataTables_filter">
-                    <form class="tag-table-form">
+                    <form class="log-table-form">
                         <div class="row">
-                            <div class="col-sm-3">
+                        	<div class="col-sm-4">
                                 <div class="input-group">
                                     <span class="input-group-addon">
-					               标签名称：
+					               	操作时间：
 					            </span>
                                     <div class="form-group">
-                                        <input type="text" name="tagNamee" class="form-control">
+                                        <input type="text" name="timeField" class="form-control">
                                         <i class="form-group__bar"></i>
                                     </div>
                                 </div>
@@ -44,23 +41,34 @@
                             <div class="col-sm-3">
                                 <div class="input-group">
                                     <span class="input-group-addon">
-					               标签编码：
+					               	操作用户：
 					            </span>
                                     <div class="form-group">
-                                        <input type="text" name="tagCodee" class="form-control">
+                                        <input type="text" name="username" class="form-control">
                                         <i class="form-group__bar"></i>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+					               	描述：
+					            </span>
+                                    <div class="form-group">
+                                        <input type="text" name="operation" class="form-control">
+                                        <i class="form-group__bar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </form>
                 </div>
                 <div class="table-responsive">
-                    <table id="tagTable" data-mobile-responsive="true" class="mb-bootstrap-table text-nowrap"></table>
+                    <table id="logTable" data-mobile-responsive="true" class="mb-bootstrap-table text-nowrap"></table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script data-th-src="@{js/app/blog/tag/tag.js}"></script>
-<script data-th-src="@{js/app/blog/tag/tagEdit.js}"></script>
+<script data-th-src="@{js/app/system/log/log.js}"></script>
