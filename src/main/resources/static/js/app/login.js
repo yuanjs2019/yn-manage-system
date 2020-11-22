@@ -80,7 +80,8 @@ function regist() {
         dataType: "json",
         success: function (r) {
             if (r.code === 0) {
-                $MB.n_success("注册成功，请登录");
+              /*  $MB.n_success("注册成功，请登录");*/
+                alert("注册成功，请登录");
                 $(".sign-up input[name='username']").val("");
                 $(".sign-up input[name='password']").val("");
                 $(".sign-up input[name='cpassword']").val("");
