@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="edge"/>
+    <title>Softbabet博客后台管理系统</title>
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.ico}"/>
+    <link rel="stylesheet" th:href="@{css/login-style.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{css/animate/animate.min.css}" type="text/css">
+  <!-- <link rel="stylesheet" th:href="@{css/app.css}" type="text/css">-->
+    <!-- animate -->
+    <script th:src="@{js/jquery.min.js}"></script>
+    <script th:src="@{js/bootstrap-notify/bootstrap-notify.min.js}"></script>
+    <script th:src="@{js/common.js}"></script>
+</head>
+<style>
+
+</style>
+<body>
+<div class="content">
+    <div class="form sign-in">
+        <h2>YN系统登录</h2>
+        <label>
+            <span>用户名</span>
+            <input type="text" name="username" />
+        </label>
+        <label>
+            <span>密码</span>
+            <input type="password" name="password" />
+        </label>
+        <label>
+            <span>验证码</span>
+            <div></div>
+            <input type="text" name="code"  style="display:inline-block;width:30%; padding:10px;"/>
+            <img data-th-src="@{gifCode}" id="validateCodeImg" onclick="reloadCode()" style="display:inline-block" />
+        </label>
+        <label>
+            <input type="checkbox" name="rememberme" style="display:inline-block;width:10%;"/>
+            <p style="display:inline-block">记住我</p>
+        </label>
+        <button type="button" class="submit" onclick="login()" id="loginButton">登录</button>
+        <!--<button type="button" class="fb-btn">使用 <span>facebook</span> 帐号登录</button>-->
+    </div>
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
+                <h2>还未注册？</h2>
+                <p>立即注册，敬请体验新功能！</p>
+            </div>
+            <div class="img__text m--in">
+                <h2>已有帐号？</h2>
+                <p>有帐号就登录吧，好久不见了！</p>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">注 册</span>
+                <span class="m--in">登 录</span>
+            </div>
+        </div>
+        <div class="form sign-up">
+            <h2>YN系统注册</h2>
+            <label>
+                <span>用户名</span>
+                <input type="text" name="username" />
+            </label>
+            <label>
+                <span>密码</span>
+                <input type="password" name="password" />
+            </label>
+            <label>
+                <span>确认密码</span>
+                <input type="password" name="cpassword" />
+            </label>
+            <button type="button" class="submit" onclick="regist()">注册</button>
+            <!--<button type="button" class="fb-btn">使用 <span>facebook</span> 帐号注册</button>-->
+        </div>
+    </div>
+</div>
+<!--<div data-th-include="common/footer"></div>-->
+</body>
+<script th:inline="javascript">
+    var ctx = [[@{/}]];
+</script>
+<script data-th-src="@{js/login.js}"></script>
+<script data-th-src="@{js/app/login.js}"></script>
+</html>
