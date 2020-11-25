@@ -10,7 +10,7 @@
 
  **如果对您有帮助，您可以点右上角 "`Star`" 支持一下 谢谢！**
 
- **如果您想获悉项目实时更新信息，您可以点右上角 [![Fork me on Gitee](./outimg/forkme.svg)](https://gitee.com/yn-manage-system/)感谢您的支持！**
+ **如果您想获悉项目实时更新信息，您可以点右上角 [![Fork me on Gitee](./outimg/forkme.svg)](https://gitee.com/yuan625/yn-manage-system)感谢您的支持！**
 
  **本项目还在不断开发完善中,如有建议或问题请通`Issues`反馈！**
 
