@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service("seriesService")
+@Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class SeriesServiceImpl extends BaseService<Series> implements SeriesService {
     private Logger log = LoggerFactory.getLogger(this.getClass());

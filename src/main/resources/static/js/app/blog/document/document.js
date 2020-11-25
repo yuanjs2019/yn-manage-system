@@ -18,18 +18,35 @@ $(function() {
                 field: 'id',
                 title: '主键ID',
                 width: 150
-            }, {
+            },
+            {
                 field: 'title',
                 title: '文档名称'
-            }, {
+            },
+            {
                 field: 'cover',
-                title: '封面地址'
+                title: '封面',
+                formatter: function (value, row, index) {
+                    return '<img width="45px" height="63x" src="'+value+'">';
+                }
+            },
+            {
+                title: '操作',
+                formatter: function (value, row, index) {
+                    return "<a href='#' onclick='xx(\"" + row.id  + "\")'>详情</a>";
+                }
             }
         ]
     };
 
     $MB.initTable('documentTable', settings);
 });
+
+function xx(id) {
+  alert("获取到此id为:"+id);
+  var xx ='<span name="classify" onclick="loadMain(this);" class="navigation__active"><i class=""></i>&nbsp;&nbsp;分类管理</span>';
+    loadMain(xx,id);
+}
 
 function search() {
     $MB.refreshTable('documentTable');

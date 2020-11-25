@@ -17,4 +17,6 @@ public interface ClassifyService extends IService<Classify> {
 
 	void updateClassify(Classify classify);
 
+	List<Classify> findClassifysByBlogId(Long blogId);
+
 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service("tagService")
+@Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class TagServiceImpl extends BaseService<Tag> implements TagService {
 
@@ -63,5 +63,10 @@ public class TagServiceImpl extends BaseService<Tag> implements TagService {
 	@Override
 	public void updateTag(Tag tag) {
 		this.updateNotNull(tag);
+	}
+
+	@Override
+	public List<Tag> findTagsByBlogId(Long blogId) {
+		return tagMapper.findTagsByBlogId(blogId);
 	}
 }

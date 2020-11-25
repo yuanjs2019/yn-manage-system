@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service("cassifyService")
+@Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
 public class ClassifyServiceImpl extends BaseService<Classify> implements ClassifyService {
     private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -64,5 +64,10 @@ public class ClassifyServiceImpl extends BaseService<Classify> implements Classi
     @Override
     public void updateClassify(Classify classify) {
         this.updateNotNull(classify);
+    }
+
+    @Override
+    public List<Classify> findClassifysByBlogId(Long blogId) {
+        return classifyMapper.findClassifysByBlogId(blogId);
     }
 }

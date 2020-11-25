@@ -18,4 +18,6 @@ public interface TagService extends IService<Tag> {
 
 	void updateTag(Tag tag);
 
+	List<Tag> findTagsByBlogId(Long blogId);
+
 }

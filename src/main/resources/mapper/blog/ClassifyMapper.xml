@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.yuan.blog.dao.ClassifyMapper">
+
+
+    <select id="findClassifysByBlogId"  resultType="cn.yuan.blog.domain.Classify">
+        SELECT
+        b.classify_name classifyName,b.classify_code classifyCode,b.id id
+        FROM yn_blog_classify a
+        LEFT JOIN yn_classify b ON a.classify_id=b.id WHERE a.blog_id = #{0}
+    </select>
+
+    <insert id="addBlogClassify" parameterType="cn.yuan.blog.domain.YnBlogClassify">
+       INSERT INTO yn_blog_classify (classify_id, blog_id) VALUES (#{classifyId}, #{blogId})
+    </insert>
+
+    <delete id="deleteBlogClassifyByBlogId">
+        DELETE FROM yn_blog_classify WHERE blog_id = #{0}
+    </delete>
 </mapper>

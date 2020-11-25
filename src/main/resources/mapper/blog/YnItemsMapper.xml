@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yuan.blog.dao.YnItemsMapper">
+    <resultMap id="ynItemsMap" type="cn.yuan.blog.domain.YnItems">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="item_classfy_id" jdbcType="TINYINT" property="itemClassfyId" />
+        <result column="item_classfy_name" jdbcType="VARCHAR" property="itemClassfyName" />
+        <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+        <result column="item_explain" jdbcType="VARCHAR" property="itemExplain" />
+        <result column="item_picture" jdbcType="VARCHAR" property="itemPicture" />
+        <result column="item_url" jdbcType="VARCHAR" property="itemUrl" />
+        <result column="item_introduce_url" jdbcType="VARCHAR" property="itemIntroduceUrl" />
+        <result column="has_document" jdbcType="TINYINT" property="hasDocument" />
+    </resultMap>
+
+    <select id="findAllYnItems" parameterType="cn.yuan.blog.domain.YnItems" resultMap="ynItemsMap">
+        SELECT *FROM yn_items
+
+    </select>
+
+    <select id="findById"  resultMap="ynItemsMap">
+      SELECT
+       *
+        FROM yn_items
+        WHERE id = #{0}
+    </select>
+
+</mapper>
