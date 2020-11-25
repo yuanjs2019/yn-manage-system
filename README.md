@@ -58,7 +58,7 @@
 
 ### 开发者信息
 
-- 系统名称：yn-blog博客系统
+- 系统名称：Yn-manage-system后台管理系统
 - 作者：softbabet
 - 邮箱：yuanjs625@163.com
 
