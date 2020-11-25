@@ -83,7 +83,3 @@
 ### 数据库表
 
 ![数据库表](./outimg/10.png)
-
-### 特别赞助
-
-[![jetbrains](./outimg/jetbrains.png) ](https://www.jetbrains.com/)
