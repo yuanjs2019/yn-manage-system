@@ -1,0 +1,135 @@
+<div class="modal fade" id="blog-add" data-keyboard="false" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title pull-left" id="blog-add-modal-title">新增标签</h3>
+            </div>
+            <div class="modal-body">
+                <form id="blog-add-form">
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	文章标题：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="title" class="form-control">
+                                    <input type="text" name="id" hidden class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	文章描述：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="description" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	文章头图片：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mainPicture" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	作者：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="author" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 系列：
+					             </span>
+                                <div class="form-group">
+                                    <select multiple="multiple" name="sericsSelect"></select>
+                                    <input name="seriesCode" hidden/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 分类：
+					             </span>
+                                <div class="form-group">
+                                    <select multiple="multiple" name="classifySelect"></select>
+                                    <input name="classies" hidden/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 标签：
+					             </span>
+                                <div class="form-group">
+                                    <select multiple="multiple" name="tagSelect"></select>
+                                    <input name="tags" hidden/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group" style="margin-top:10px;">
+                                <span class="input-group-addon">
+					               	文章类型：
+					             </span>
+                                <div class="form-group">
+                                    <label class="custom-control custom-radio">
+                                        <input name="type" type="radio" value="1" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">转载</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input name="type" type="radio" value="2" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">原创</span>
+                                    </label>
+                                    <label class="custom-control custom-radio">
+                                        <input name="type" type="radio" value="" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">其他</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-save" id="blog-add-button" name="save">保存</button>
+                <button type="button" class="btn btn-secondary btn-close">关闭</button>
+                <button class="btn-hide"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script data-th-src="@{js/app/blog/blog/blogAdd.js}"></script>
