@@ -80,6 +80,12 @@
 
 ![删除](./outimg/8.png)
 
+![删除](./outimg/11.png)
+
+![删除](./outimg/12.png)
+
+![删除](./outimg/13.png)
+
 ### 数据库表
 
 ![数据库表](./outimg/10.png)
